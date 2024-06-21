@@ -6,4 +6,4 @@
 
 2024.6.15开始跟[胡津铭老师](https://www.bilibili.com/video/BV1Gw4m1i7ys/?spm_id_from=333.788&vd_source=8924ad59b4f62224f165e16aa3d04f00)学machine-learning了
 
-2024.6.21 发现了[参考资料](zh.d2l.ai)
+2024.6.21 发现了[参考资料]([zh.d2l.ai](https://zh.d2l.ai/))

@@ -50,7 +50,7 @@ accuracy（准确性）度量方式更适用于**分类任务**，即预测结�
 
 这时候另一个度量方式Mean Squared Error(MSE 平方差的均值)就更适合了
 
-$MSE(f,t) =\frac{1}{n}\sum_{i=1}^{n}(y_i-f(x_i,t))^2$
+$MSE(f,t) =\frac{1}{n}\sum{i=1}^{n}(y_i-f(x_i,t))^2$
 
 MSE的问题是，当预测值值与实际值相差过大对结果影响更大因此有了
 Mean Average Error(MEA 绝对值之差的均值)

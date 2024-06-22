@@ -159,7 +159,7 @@ featrue往往不止一个(假设p个)
 
 Bayesian Risk（贝叶斯风险决策）
 
-$E_{ij}=E(\hat{y_i}|y_j)$：把$y_j$预测成$y_i$的代价
+$E_{ij}=E(\hat{y_i}|y_j)$：把 $y_j$ 预测成 $y_i$ 的代价
 
 $R(\hat{y_1}|x)=E_{11}P(y_1|x)+E_{12}P(y_2|x)=E_{12}P(y_2|x)$
 

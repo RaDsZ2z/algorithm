@@ -10,9 +10,9 @@
 
 mac上python虚拟环境的搭建:
 ```shell
-python3 -m venv path/to/venv 创建一个虚拟环境
-source path/to/venv/bin/activate 激活虚拟环境
-python3 -m pip install xyz 在虚拟环境中安装包
+python3 -m venv path/to/venv #创建一个虚拟环境
+source path/to/venv/bin/activate #激活虚拟环境
+python3 -m pip install xyz #在虚拟环境中安装包
 
 # 我电脑上的虚拟环境安装在～这个地方了，也就是
 python3 -m venv ～/path/to/venv

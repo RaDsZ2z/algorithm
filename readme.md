@@ -18,3 +18,13 @@ python3 -m pip install xyz #在虚拟环境中安装包
 python3 -m venv ～/path/to/venv
 source ~/path/to/venv/bin/activate
 ```
+使用vscode 将md文件导出pdf时无法正常渲染公式，在md文件末尾加上
+```html
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
+</script>
+```
+公式中加百分号要在前面加上两个\\
+
+$11.4\\%$

@@ -25,6 +25,8 @@ source ~/path/to/venv/bin/activate
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
 </script>
 ```
-公式中加百分号要在前面加上两个\\
-
+公式中加百分号要在前面加上两个反斜杠"\"
+```md
+$11.4\\%$
+```
 $11.4\\%$

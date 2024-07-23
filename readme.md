@@ -21,11 +21,13 @@ source ~/path/to/venv/bin/activate
 使用vscode 将md文件导出pdf时无法正常渲染公式，在md文件末尾加上
 
 (vscode插件:Markdown PDF)
+```markdown
 ```html
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
 </script>
+```
 ```
 分页符
 

@@ -30,9 +30,9 @@ source ~/path/to/venv/bin/activate
 \`\`\`
 ```
 分页符
-
+```html
 <div STYLE="page-break-after: always;"></div>
-
+```
 公式中加百分号要在前面加上两个反斜杠"\"
 ```md
 $11.4\\%$

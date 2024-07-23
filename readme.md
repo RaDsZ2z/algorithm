@@ -27,6 +27,10 @@ source ~/path/to/venv/bin/activate
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
 </script>
 ```
+分页符
+
+<div STYLE="page-break-after: always;"></div>
+
 公式中加百分号要在前面加上两个反斜杠"\"
 ```md
 $11.4\\%$

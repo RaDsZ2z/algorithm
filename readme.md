@@ -15,8 +15,8 @@ source path/to/venv/bin/activate #激活虚拟环境
 python3 -m pip install xyz #在虚拟环境中安装包
 
 # 我电脑上的虚拟环境安装在～这个地方了，也就是
-python3 -m venv ～/path/to/venv
-source ~/path/to/venv/bin/activate
+python3 -m venv ～/path/to/venv #创建虚拟环境
+source ~/path/to/venv/bin/activate #激活虚拟环境
 ```
 使用vscode 将md文件导出pdf时无法正常渲染公式，在md文件末尾加上
 

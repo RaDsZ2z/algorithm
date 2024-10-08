@@ -4,6 +4,7 @@ AC自动机的前置知识是[KMP算法](https://github.com/RaDsZ2z/algorithm/bl
 
 [AC自动机(简单版)](https://www.luogu.com.cn/problem/P3808)
 
+给出多个模式串和一个文本串，问有多少个模式串在文本串里出现过
 ```cpp
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>

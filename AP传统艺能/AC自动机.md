@@ -80,4 +80,6 @@ int main()
 ```
 [AC自动机(简单版Ⅱ)](https://www.luogu.com.cn/problem/P3796)
 
+给出多个模式串和一个文本串，问**哪些**模式串在文本串中出现的次数最多
+
 [【模板】AC自动机](https://www.luogu.com.cn/problem/P5357)

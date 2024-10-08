@@ -2,7 +2,7 @@
 
 这次要学AC自动机，又拿出来学了一下
 
-[洛谷题解](https://www.luogu.com.cn/problem/solution/P3375)
+[洛谷帖子](https://www.luogu.com.cn/problem/solution/P3375)
 
 [oi-wiki](https://oi-wiki.org/string/kmp/)
 

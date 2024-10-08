@@ -1,4 +1,6 @@
-先贴三道题目
+AC自动机的前置知识是KMP算法和字典树
+
+下面是三道题
 
 [AC自动机(简单版)](https://www.luogu.com.cn/problem/P3808)
 

@@ -190,3 +190,93 @@ int main() {
 ```
 
 [【模板】AC自动机](https://www.luogu.com.cn/problem/P5357)
+```cpp
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
+#include <queue>
+using namespace std;
+const int N = 200005;
+struct node {
+	int son[26];
+	int fail;
+	int ind;
+	int res;
+}tree[N];
+int cnt = 0;
+int in[N], firstIndex[N], res[N];
+void build(const string&s, int ind) {
+	int p = 0;
+	for (const char& i : s) {
+		int x = i - 'a';
+		if (!tree[p].son[x]) {
+			tree[p].son[x] = ++cnt;
+		}
+		p = tree[p].son[x];
+	}
+	if (!tree[p].ind)tree[p].ind = ind;
+	firstIndex[ind] = tree[p].ind;
+}
+void init() {
+	queue<int> q;
+	for (int i = 0; i < 26; i++) {
+		if (tree[0].son[i]) {
+			q.push(tree[0].son[i]);
+		}
+	}
+	tree[0].fail = 0;
+	while (!q.empty()) {
+		int u = q.front();
+		q.pop();
+		for (int i = 0; i < 26; i++) {
+			if (tree[u].son[i]) {
+				tree[tree[u].son[i]].fail = tree[tree[u].fail].son[i];
+				in[tree[tree[u].fail].son[i]]++;
+				q.push(tree[u].son[i]);
+			}
+			else {
+				tree[u].son[i] = tree[tree[u].fail].son[i];
+			}
+		}
+	}
+}
+void query(const string &s) {
+	int p = 0;
+	for (const char&i : s) {
+		int x = i - 'a';
+		p = tree[p].son[x];
+		tree[p].res++;
+	}
+}
+void topu() {
+	queue<int> q;
+	for (int i = 1; i <= cnt; i++)if (in[i] == 0)q.push(i);
+	while (!q.empty()) {
+		
+		int u = q.front();
+		
+		q.pop();
+		res[tree[u].ind] = tree[u].res;
+		int v = tree[u].fail;
+		in[v]--;
+		tree[v].res += tree[u].res;
+		if (!in[v])q.push(v);
+	}
+}
+int main()
+ {
+	//freopen("in.txt", "r", stdin);
+	int n; cin >> n;
+	string s;
+	for (int i = 1; i <= n; i++) {
+		cin >> s;
+		build(s, i);
+	}
+	init();
+	cin >> s;
+	query(s);
+	topu();
+	for (int i = 1; i <= n; i++)cout << res[firstIndex[i]]<<'\n';
+	return 0;
+}
+```

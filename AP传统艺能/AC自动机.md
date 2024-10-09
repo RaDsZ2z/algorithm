@@ -1,5 +1,7 @@
 AC自动机的前置知识是[KMP算法](https://github.com/RaDsZ2z/algorithm/blob/main/AP%E4%BC%A0%E7%BB%9F%E8%89%BA%E8%83%BD/KMP.md)和[字典树](http://magic.vicp.io/oi-wiki/string/trie/)
 
+[AC自动机 oi-wiki](https://oi-wiki.org/string/ac-automaton/)
+
 下面是三道题
 
 [AC自动机(简单版)](https://www.luogu.com.cn/problem/P3808)

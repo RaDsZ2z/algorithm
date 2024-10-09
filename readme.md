@@ -18,7 +18,7 @@ python3 -m pip install xyz #在虚拟环境中安装包
 python3 -m venv ～/path/to/venv #创建虚拟环境
 source ~/path/to/venv/bin/activate #激活虚拟环境
 ```
-使用vscode 将md文件导出pdf时无法正常渲染公式，在md文件末尾加上
+使用vscode 将md文件导出pdf时数学公式无法正常渲染，在md文件末尾加上
 
 (vscode插件:Markdown PDF)
 ```txt

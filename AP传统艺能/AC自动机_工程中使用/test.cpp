@@ -1,5 +1,5 @@
 #include "utf8.h"
-#include "ACAutom.h"
+#include "ACAutomachine.h"
 
 #include <queue>
 #include <memory>

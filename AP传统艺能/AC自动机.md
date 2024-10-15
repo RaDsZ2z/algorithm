@@ -190,6 +190,8 @@ int main() {
 ```
 
 [【模板】AC自动机](https://www.luogu.com.cn/problem/P5357)
+
+给出一个文本串和多个模式串，分别求出每个模式串在文本串中的出现次数。（数据不保证任意两个模式串不相同）
 ```cpp
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>

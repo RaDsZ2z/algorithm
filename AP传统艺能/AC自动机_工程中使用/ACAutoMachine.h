@@ -147,7 +147,7 @@ public:
     template <typename U>
     void BuildGoto(const U& stPatterns)
     {
-        std::cout<<"stPatterns.size():"<<stPatterns.size()<<'\n';
+        // std::cout<<"stPatterns.size():"<<stPatterns.size()<<'\n';
         state_node_type stState;
         stState.m_bEnd = false;
         stState.m_uiLevel = 0;
@@ -185,7 +185,7 @@ public:
             }
             m_stTrieTree[uiStateIndex].m_bEnd = true;
         }
-        std::cout<<"m_stTrieTree.size():"<<m_stTrieTree.size()<<'\n';
+        // std::cout<<"m_stTrieTree.size():"<<m_stTrieTree.size()<<'\n';
     }
 
     void BuildFail()

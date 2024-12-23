@@ -1,7 +1,5 @@
 
-[胡津铭老师_实用机器学习](https://www.bilibili.com/video/BV1Gw4m1i7ys/?spm_id_from=333.788&vd_source=8924ad59b4f62224f165e16aa3d04f00)
-
-[参考资料](https://zh.d2l.ai/)
+[一些参考资料](https://zh.d2l.ai/)
 
 mac上python虚拟环境的搭建:
 ```shell

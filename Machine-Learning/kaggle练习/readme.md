@@ -62,5 +62,4 @@ https://www.kaggle.com/c/competitive-data-science-predict-future-sales
 
 竞赛题目泰坦尼克号的页面指引我进入[新手引导](https://www.kaggle.com/code/alexisbcook/titanic-tutorial)，此新手引导教会我第一次提交代码。
 
-
-
+每一道题目在同级目录有单独的文件夹

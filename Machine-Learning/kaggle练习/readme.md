@@ -103,6 +103,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 
 ```python
 train_data = pd.read_csv("/kaggle/input/titanic/train.csv")
+test_data = pd.read_csv("/kaggle/input/titanic/test.csv")
 train_data.head()
 ```
 
@@ -168,3 +169,17 @@ output.to_csv('submission.csv', index=False)
 print("Your submission was successfully saved!")
 ```
 
+在继续之前，请确保您的笔记本输出了上述相同的消息（您的提交已成功保存！）。
+再次强调，如果这段代码对你来说没有意义，不要担心！现在，我们将重点介绍如何生成和提交预测。
+准备好后，单击笔记本右上角的“保存版本”按钮。这将生成一个弹出窗口。
+
+确保选择了“保存并全部运行”选项，然后单击“保存”按钮。
+这将在笔记本的左下角生成一个窗口。运行完毕后，单击“保存版本”按钮右侧的数字。
+
+![img_2](./img/img2.png)
+
+这会在屏幕右侧调出一个版本列表。单击最新版本右侧的省略号（…），然后选择在查看器中打开。
+
+单击屏幕顶部的数据选项卡。然后，单击“提交”按钮提交您的结果。
+
+![img3](./img/img3.png)

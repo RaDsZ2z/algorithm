@@ -12,59 +12,11 @@ anaconda-navigator
 
 （另外，`kaggle`页面也提供了类似`jupyter`的代码编辑界面，可以不在本地计算机安装任何东西）
 
-# 1.一些竞赛地址
-
-我问了AI有没有推荐给初学者的kaggle竞赛，它的回答如下
-
-## 1.1.Titanic: Machine Learning from Disaster
-
-这是一个经典的入门项目，任务是预测哪些乘客在泰坦尼克号沉没时幸存。
-
-https://www.kaggle.com/c/titanic
-
-## 1.2.House Prices: Advanced Regression Techniques
-
-个比赛的目标是预测房屋的销售价格，帮助你熟悉回归分析和特征工程。
-
-https://www.kaggle.com/c/house-prices-advanced-regression-techniques
-
-## 1.3.Digit Recognizer
-
-通过识别手写数字来实现图像分类，适合初学者学习深度学习和计算机视觉。
-
-https://www.kaggle.com/c/digit-recognizer
-
-## 1.4.Iris Species
-
-这是一个非常简单的分类任务，目标是根据花萼和花瓣的特征预测鸢尾花的种类。
-
-https://www.kaggle.com/datasets/uciml/iris
-
-## 1.5.Wine Quality
-
-预测葡萄酒的质量评分，适合进行回归分析和特征选择。
-
-https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009
-
-## 1.6.Predict Future Sales
-
-预测商店的未来销售额，涉及时间序列分析和数据处理。
-
-https://www.kaggle.com/c/competitive-data-science-predict-future-sales
-
-## 1.7.小贴士
-
-**阅读文档**：在参加比赛之前，确保仔细阅读比赛说明和数据集描述。
-
-**探索 Kernels**：查看其他参赛者的 Kernels（代码和笔记本），学习他们的思路和方法。
-
-**从简单开始**：选择适合你当前技能水平的比赛，从简单的项目开始，逐步提高难度。
-
-# # 2.新手引导
+# # 1.新手引导
 
 竞赛题目泰坦尼克号的页面指引我进入[新手引导](https://www.kaggle.com/code/alexisbcook/titanic-tutorial)，此新手引导教会我第一次提交代码。
 
-## 2.1.get started
+## 1.1.get started
 
 竞赛页面点击`data`页面下拉，可以下载数据
 
@@ -74,7 +26,7 @@ https://www.kaggle.com/c/competitive-data-science-predict-future-sales
 
 `gender_submission.csv`是一个示例，举例参赛者应该如何表示自己的预测结果
 
-## 2.2.代码环境
+## 1.2.代码环境
 
 `kaggle`提供了一个网页的代码编写环境
 
@@ -111,7 +63,7 @@ train_data.head()
 
 `train_data.head()`可以填入参数改变显示的行数
 
-## 2.3.第一次提交
+## 1.3.第一次提交
 
 我们的目标是：在`train.csv`中找到模型，帮助我们预测`test.csv`中的乘客是否幸存
 
@@ -183,3 +135,11 @@ print("Your submission was successfully saved!")
 单击屏幕顶部的数据选项卡。然后，单击“提交”按钮提交您的结果。
 
 ![img3](./img/img3.png)
+
+# 2.实战
+
+从李沐教程第8章开始有具体的模型，应该会根据具体的模型选择对应的竞赛进行实战。
+
+## 2.1.线性回归
+
+[房价预测](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)

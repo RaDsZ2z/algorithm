@@ -1,11 +1,5 @@
-# 关于anaconda
+1.动手学习深度学习 李沐老师的课程 视频在b站
 
-在mac上安装很顺利，每次打开都有图形化界面，选择 `jupyter Note book(Web-based)`用起来很方便
+2.kaggle练习 kaggle上竞赛实战记录
 
-但是第一次在windows上安装时只有命令行，输入
-
-```
-anaconda-navigator
-```
-
-之后 出现了上述图形化界面
+3.实用的机器学习 胡老师的课程，看起来是无限搁置了

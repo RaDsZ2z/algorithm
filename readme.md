@@ -30,9 +30,9 @@ source ~/path/to/venv/bin/activate #激活虚拟环境
 ```md
 $11.4\\%$
 ```
-$11.4\\%$
+$11.4\\%$  
 
-24.12.8
+24.12.8  
 
-anaconda是真好用
+`anaconda`是真好用
 

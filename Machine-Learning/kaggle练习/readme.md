@@ -4,7 +4,7 @@
 
 但是第一次在windows上安装时只有命令行，输入
 
-```
+```shell
 anaconda-navigator
 ```
 

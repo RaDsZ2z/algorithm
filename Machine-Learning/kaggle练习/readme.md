@@ -18,7 +18,7 @@ anaconda-navigator
 
 ## 1.1.get started
 
-竞赛页面点击`data`页面下拉，可以下载数据
+[竞赛页面](https://www.kaggle.com/c/titanic)点击`data`页面下拉，可以下载数据
 
 `train.csv`包含船上乘客子集的详细信息(准确地说是`891`名乘客的信息，每一行是一位乘客的信息)，是训练数据
 
@@ -135,6 +135,15 @@ print("Your submission was successfully saved!")
 单击屏幕顶部的数据选项卡。然后，单击“提交”按钮提交您的结果。
 
 ![img3](./img/img3.png)
+
+如果要尝试自己的算法并提交，[竞赛页面](https://www.kaggle.com/c/titanic)`Overview`页面下拉可以找到**Submission File Format**，这里说明了提交文件的格式  
+
+例如这里举例的竞赛页面给出了每列的列名，括号中有一些补充描述
+
++ PassengerId（任意顺序）
++ Survived（包含你的二元预测：1代表存活，0代表遇难）
+
+不过，好像没有指明文件名？教程中的文件名是`submission.csv`，或许可以试一下使用其它文件名会发生什么。
 
 # 2.实战
 

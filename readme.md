@@ -14,7 +14,7 @@ anaconda-navigator
 
 [一些参考资料](https://zh.d2l.ai/)
 
-# # 其它
+# 其它
 
 ```shell
 python3 -m venv path/to/venv #创建一个虚拟环境

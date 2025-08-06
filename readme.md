@@ -12,8 +12,6 @@ anaconda-navigator
 
 （另外，`kaggle`页面也提供了类似`jupyter`的代码编辑界面，可以不在本地计算机安装任何东西）
 
-[一些参考资料](https://zh.d2l.ai/)
-
 # 其它
 
 ```shell

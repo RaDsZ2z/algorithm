@@ -1,0 +1,1 @@
+此竞赛来自[李沐课程](https://www.bilibili.com/video/BV1z64y1o7iz/?spm_id_from=333.1387.upload.video_card.click&vd_source=8924ad59b4f62224f165e16aa3d04f00)，[竞赛地址](https://www.kaggle.com/c/classify-leaves)

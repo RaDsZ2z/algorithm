@@ -1,19 +1,3 @@
-# 关于anaconda
-
-在mac上安装很顺利，每次打开都有图形化界面，选择 `jupyter Note book(Web-based)`用起来很方便
-
-但是第一次在windows上安装时只有命令行，输入
-
-```shell
-anaconda-navigator
-```
-
-之后 出现了上述图形化界面
-
-（另外，`kaggle`页面也提供了类似`jupyter`的代码编辑界面，可以不在本地计算机安装任何东西）
-
-# 其它
-
 ```shell
 python3 -m venv path/to/venv #创建一个虚拟环境
 source path/to/venv/bin/activate #激活虚拟环境

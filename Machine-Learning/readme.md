@@ -24,6 +24,17 @@ anaconda-navigator
 
 （另外，`kaggle`页面也提供了类似`jupyter`的代码编辑界面，可以不在本地计算机安装任何东西）
 
+
+
+画图时jupyter内核经常崩溃，其原因是pytorch使用的库文件与其它库文件有冲突，下面是临时的解决方法，其告诉系统允许库的重复加载
+
+```python
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+```
+
+
+
 # 3.daily
 
 ## 2025.10.9

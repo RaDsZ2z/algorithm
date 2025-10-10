@@ -87,6 +87,59 @@ CHW分别是通道数、高、宽。
 看看数据实际上的变化：
 
 ```python
+import os
+import pandas as pd
+from torch.utils.data import Dataset, DataLoader
+import torchvision.transforms as T
+import numpy as np
+from PIL import Image
+base_path = './classify-leaves'
+class LeaveDataset(Dataset):
+    def __init__(self, data_df, transform=None):
+        self.data = data_df
+        self.transform = transform
 
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        img_path = os.path.join(base_path, self.data.iloc[idx,0])
+        image = Image.open(img_path)
+        array = np.array(image)
+        print('shape1:',array.shape)
+        print('mean1:',array.mean())
+        if self.transform:
+            image = self.transform(image)  # 应用转换
+        print('shape2:',image.shape)
+        print('mean2:',image.mean())
+        label_name = self.data.iloc[idx,1]
+        label = label2idx[label_name]  # 转换为整数索引
+
+        return image, label  # 返回 (图片, 标签)
+
+train_df= pd.read_csv(os.path.join(base_path,"train.csv"))
+# 获取所有唯一的类别（叶子种类）
+unique_labels = train_df["label"].unique()
+
+# 创建 类别 → 索引 的映射
+label2idx = {label: idx for idx, label in enumerate(unique_labels)}
+
+# 创建反向映射（id → label）
+idx2label = {v: k for k, v in label2idx.items()}
+transform = T.Compose([
+    T.ToTensor(),
+])
+train_dataset = LeaveDataset(train_df,transform)
+train_dataset[0]
+pass
+'''
+shape1: (224, 224, 3)
+mean1: 242.8440622342687
+shape2: torch.Size([3, 224, 224])
+mean2: tensor(0.9523)
+'''
 ```
 
+通过输出可以看到，形状从(224,224,3)变为了(3,224,224)
+
+均值从242变为了0.95

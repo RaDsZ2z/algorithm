@@ -14,7 +14,11 @@
 
 **开始训练**
 
-使用的是resnet，第一次跑完测试精度只有**35%**左右，做了如下改动
+使用的是resnet，第一次跑完测试精度只有**35%**左右
+
+补充，重复运行之后的结果分别是：**??**
+
+做如下改动
 
 ```python
 optimizer = torch.optim.SGD(net.parameters(),lr=lr) #小批量随机梯度下降
@@ -25,7 +29,11 @@ optimizer = torch.optim.SGD(net.parameters(),lr=lr,momentum=momentum) #小批量
 
 我不清楚这个参数对应的技巧理论，或许看一下李沐《动手学深度学习》第28到30节会有答案
 
-修改之后观察到训练过程中测试精度产生了很大的震荡，最后的结果是**75%**，再加上权重衰退试试
+修改之后观察到训练过程中测试精度产生了很大的震荡，最后的结果是**75%**  
+
+补充，重复运行之后的结果分别是：  **74.1%，26.9%**
+
+再加上权重衰退试试
 
 ```python
 momentum = 0.9
@@ -34,12 +42,51 @@ optimizer = torch.optim.SGD(net.parameters(),lr=lr,momentum=momentum) #小批量
 
 权重衰退对应的理论我也不记得了，可以复习第12节教程
 
-加上权重衰退后，测试精度的震荡幅度依然很大，最终结果是**84%**。
+加上权重衰退后，测试精度的震荡幅度依然很大，最终结果是**83.8%**。
 
-**上面三个结果都只跑了一次**
+补充，重复运行之后的结果分别是：**71.7%，85.1%，72.0%**
 
-感觉目前我这个网络是不太work的，主要是震动幅度太大，需要继续优化(有时间先多跑几次，看看最终测试精度的波动程度)
+感觉目前这个网络是不太work的，主要是震动幅度太大，需要继续优化(有时间先多跑几次，看看最终测试精度的波动程度)
+
+Q：我的测试精度为什么会震荡，我不知道原因
+
+A：
+
+Q：函数`train_ch6`里面的`net.train()`是在干嘛？前向运算吧？
+
+A：
 
 
 
-[参考](https://www.kaggle.com/code/wangdark/classify-leaves-resnet)
+[参考kaggle博客](https://www.kaggle.com/code/wangdark/classify-leaves-resnet)  
+
+
+
+之前把参考博客的代码完全搬到自己电脑上，没跑起来，读取数据时的`num_workers`改成0之后跑起来了
+
+# 下面是对参考博客的解读
+
+```python
+import torchvision.transforms as T
+transform = T.Compose([
+    T.ToTensor()
+])
+img = transform(img)
+```
+
+经过`transform`前后`img`发生了什么变化呢，`cursor`说
+
+> 把输入图片从PIL 图像或 numpy 数组（形状 [H, W, C]，像素 0–255）
+>
+> 转成
+>
+> PyTorch 张量（形状 [C, H, W]，类型 float32，数值缩放到 0–1）
+
+CHW分别是通道数、高、宽。
+
+看看数据实际上的变化：
+
+```python
+
+```
+

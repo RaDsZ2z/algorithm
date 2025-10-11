@@ -64,7 +64,9 @@ A：
 
 之前把参考博客的代码完全搬到自己电脑上，没跑起来，读取数据时的`num_workers`改成0之后跑起来了
 
-# 下面是对参考博客的解读
+# 下面是对参考博客的阅读
+
+## 1.ToTensor
 
 ```python
 import torchvision.transforms as T
@@ -143,3 +145,80 @@ mean2: tensor(0.9523)
 通过输出可以看到，形状从(224,224,3)变为了(3,224,224)
 
 均值从242变为了0.95
+
+# 2.定义模型
+
+```python
+import torchvision.models as models
+
+resnet = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)#封装好的resnet18
+num_classes = len(label_counts)
+resnet.fc = torch.nn.Linear(resnet.fc.in_features, num_classes)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+resnet = resnet.to(device)
+```
+
+`resnet.fc`对应`resnet18`的最后一层，它原本也是一个全连接层`torch.nn.Linear(in_features=512, out_features=1000)`
+
+`torch.nn.Linear`创建一个全连接层，两个参数是输入特征数和输出特征数
+
+`resnet.fc.in_features`是最后一层的输入的特征数量
+
+`resnet = resnet.to(device)`把模型搬到GPU
+
+# 3.损失函数和优化器
+
+```python
+# 交叉熵损失（适用于分类问题）
+criterion = nn.CrossEntropyLoss()
+
+# 学习率，动量
+lr,momentum = 0.01,0.9
+
+
+# 优化器
+optimizer = optim.SGD(resnet.parameters(), lr=lr, momentum=momentum)
+```
+
+这个momentum参数是干嘛的来着？好像是批量归一化？  
+
+是的，是[批量归一化](https://www.bilibili.com/video/BV1X44y1r77r?spm_id_from=333.788.videopod.episodes&vd_source=8924ad59b4f62224f165e16aa3d04f00)
+
+# 4.训练模型
+
+```python
+# 单次训练
+def train():
+    resnet.train()
+
+    batch_nums = len(train_loader)  # 批次数
+    batch_size = train_loader.batch_size  # 批量大小
+    size = len(train_loader.dataset)  # 数据集大小
+    
+    train_loss,correct = 0.0, 0.0 # 统计损失和准确率
+
+    p = tqdm(train_loader, desc="Training", unit="batch")
+    
+    for X,y in p:
+        X,y = X.to(device),y.to(device)
+        pred = resnet(X)
+        loss = criterion(pred,y)
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()
+        
+        p.set_postfix(loss=f"{loss.item():>8f}")  # 显示损失值
+        
+        train_loss+=loss.item() # 累计每个批次的平均损失
+        correct += (pred.argmax(1) == y).sum().item() # 计算正确预测的数量
+
+    train_loss /= batch_nums
+    correct /= size
+    print(f"Train Accuracy: {(100*correct):>0.2f}%, Train Avg loss: {train_loss:>8f}")
+
+    return train_loss,correct
+```
+
+这里第一次用到了`tqdm`函数，对可迭代对象调用这个函数，返回的值同样是一个可迭代对象，区别是新的可迭代对象被遍历时会有可视化的进度条
+
+每次循环的X和y对应一个batch，`X.to(device)`和`y.to(device)`是把数据搬到GPU

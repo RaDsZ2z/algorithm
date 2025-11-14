@@ -374,4 +374,3 @@ pred_labels = [idx2label[pred_id] for pred_id in all_preds] # 转换成label
 val_df['label'] = pred_labels
 val_df.to_csv('submission.csv',index=False)
 ```
-

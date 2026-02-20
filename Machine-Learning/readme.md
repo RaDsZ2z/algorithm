@@ -47,3 +47,57 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 ```
 
+## 2026.2.20 关于import路径 创建自己的库
+
+**查看import的所有搜索路径**
+
+```python
+import sys
+print(sys.path)
+```
+
+**添加import的搜索路径**
+
+```python
+# 方法A：直接添加（仅当前会话有效）
+sys.path.append('/path/to/your/module')
+
+# 方法B：通过环境变量（影响当前内核）
+import os
+os.environ['PYTHONPATH'] = '/path/to/your/module:' + os.environ.get('PYTHONPATH', '')
+```
+
+**创建库文件**
+
+```txt
+my_package/          # 你的库文件夹
+├── __init__.py
+└── hello.py
+```
+
+**两个文件的内容**
+
+```python
+# __init_.py
+#可以什么都不写，只写个版本号
+__version__ = "1.0.0"
+```
+
+```python
+# hello.py
+def hello():
+  print('hello world')
+```
+
+**调用库文件**
+
+```python
+# main.py
+import my_package.hello as test
+test.hello()
+'''
+hello world
+'''
+```
+
+> 小tips，修改库文件之后需要重新打开.ipynb文件
